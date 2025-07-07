@@ -1,5 +1,8 @@
 # AI project
 
+## Development
+After cloning the repo, you need to create your own `.env` file that contains the Django secret key. Contact turtle for the secret key. 
+
 ## Install packages
 ```sh
 pip install -r ./requirements.txt
@@ -14,7 +17,7 @@ python manage.py runserver
 Your Django application is now available at `http://localhost:8000`.
 
 ## Secret Key
-Contact turtle
+Contact turtle.
 
 ## How it Works
 
