@@ -7,7 +7,7 @@
   ],
   "functions": {
     "api/**": {
-      "excludeFiles": "{staticfiles,app}/**"
+      "excludeFiles": "{.next,*.cache,staticfiles,app}/**"
     }
   }
 }
