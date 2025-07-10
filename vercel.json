@@ -4,7 +4,7 @@
       "src": "/(.*)",
       "dest": "api/wsgi.py"
     }
-  ]
+  ],
   "functions": {
     "api/**": {
       "excludeFiles": "{staticfiles,app}/**"
