@@ -1,13 +1,30 @@
 {
-  "routes": [
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/wsgi.py",
+      "user": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "Python3.9"
+      }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    }
+  ],
+  "routes":[
+    {
+      "src": "/staticfiles/(.*)",
+      "dest": "/ststicfiles/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "api/wsgi.py"
     }
-  ],
-  "functions": {
-    "api/**": {
-      "excludeFiles": "{.next,*.cache,staticfiles,app}/**"
-    }
-  }
+  ]
 }
