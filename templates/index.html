@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div>
+        <h2>Input</h2>
+        <form enctype="multipart/form-data" action="/upload_file" method="post">
+            <label for="input_file">Upload a file:</label>
+            {% csrf_token %}
+            <input type="file" id="input_file" name="input_file" accept=".pdf">
+            <input type="submit" value="Submit">
+            <pre>{{ text }}</pre>
+            <pre>{{ response }}</pre>
+        </form>
+    </div>
+</body>
+</html>
