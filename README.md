@@ -7,7 +7,7 @@ After cloning the repo, you need to create your own `.env` file that contains th
 
 ### Install packages
 ```sh
-pip install -r ./requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Running it Locally

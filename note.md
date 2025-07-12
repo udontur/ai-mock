@@ -1,21 +1,25 @@
-vercel does not work...
+## venv
+Initiate the virtual environment
+```
+./script/venv.sh
+```
+Start the virtual environment
+```
+source .venv/bin/activate
+```
+If you are using NixOS, run this in the venv
+```
+fix-python --venv .venv
+```
+
+## Installation
+```
+pip install -r requirements.txt
+```
 
 ## Django
 Run the development server
 ```
-python manage.py runserver
+python3 manage.py runserver
 ```
 
-## Docker
-Start the daemon
-```
-dockerd
-```
-Build the docker image
-```
-sudo docker build - < Dockerfile
-```
-Run the docker image
-```
-sudo docker run -it IMAGE_ID
-```
