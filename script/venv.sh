@@ -12,4 +12,4 @@ echo "Installing dependencies..."
 python3 -m pip install --upgrade -r requirements.txt
 
 echo "Ignore the following error if you are not on NixOS: "
-fix-python
+fix-python --venv .venv
