@@ -1,7 +1,7 @@
 ## venv
-Create the virtual environment
+Initiate the virtual environment
 ```
-python3 -m venv .venv
+./script/venv.sh
 ```
 Start the virtual environment
 ```

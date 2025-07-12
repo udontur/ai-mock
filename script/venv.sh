@@ -9,4 +9,4 @@ echo "Starting the virtual environment..."
 source .venv/bin/activate
 
 echo "Installing dependencies..."
-pip install -r requirements.txt
+python3 -m pip install --upgrade -r requirements.txt
