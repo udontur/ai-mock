@@ -9,9 +9,6 @@ def read_file(file):
     text = ""
     for page in doc:
         current_page_text=page.get_text()
-        print(f"[PDF raw text from page {page.number+1}]")
-        print(current_page_text)
-        print(f"[End of PDF raw text from page {page.number+1}]")
         text += current_page_text
         print(f"[Extracted question from page {page.number+1}]")
         try:
@@ -23,7 +20,7 @@ def read_file(file):
             except:
                 print(f"Failed to parse page {page.number+1}, trying for the 3rd time")
                 try:
-                    extracted_questions=parse_text(current_page_text).content
+                                extracted_questions=parse_text(current_page_text).content
                 except:
                     print(f"Failed to parse page {page.number+1}!")
                     extracted_questions="PARSE_ERROR"
