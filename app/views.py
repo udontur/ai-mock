@@ -2,8 +2,6 @@ from django.shortcuts import render
 import pymupdf
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
-from pix2tex.cli import LatexOCR
-from pix2tex.api.app import predict_from_bytes
 import os
 import io
 import subprocess
@@ -12,33 +10,18 @@ import requests
 import time
 from fastapi import UploadFile, File
 
-# latex_ocr_model=LatexOCR()
+nougat_url_root="http://127.0.0.1:8503/"
 
-# def pdf_to_pil_image(page):
-#     pix=page.get_pixmap()
-#     print(f"PIXMAP - Type: {pix.n}, Width: {pix.width}, Height: {pix.height}")
-#     if pix.n==3:
-#         mode="RGB"
-    # elif pix.n==4:
-    #     mode="RGBA"
-    # else:
-    #     mode="L"
-    # pil_image = Image.frombytes(mode, [pix.width, pix.height], pix.samples)
-    # pil_image_width, pil_image_height = pil_image.size
-    # print(f"PIL_IMAGE - Width: {pil_image_width}, Height: {pil_image_height}")
-    # return pil_image
 def wait_for_nougat_to_start(timeout):
-    time_cnt=1
-    while time_cnt<=timeout:
+    for current_second in range(1..30):
         try:
-            response = requests.post("http://127.0.0.1:8503/")
-            print("Server has started")
+            response = requests.post(nougat_url_root)
+            print("[AI-MOCK]: The NOUGAT server is running.")
             return
         except requests.exceptions.RequestException:
             pass
-        print(f"Waiting for the server... Elapsed {time_cnt} seconds.")
+        print(f"[AI-MOCK]: Elapsed {current_second.number} seconds: Starting NOUGAT server...")
         time.sleep(1)
-        time_cnt+=1;
 
 def nougat_pdf_to_markdown(file) -> str:
     #pdf_bytes = doc.write()
@@ -60,8 +43,6 @@ def nougat_pdf_to_markdown(file) -> str:
     print(nougat_predicted_text.json())
     
 def read_parse_file(file):
-    print("ALKSDJALKDJASLDJASLDJASKLDJASLKDJASLKDJASLKDJASLKDJASLKDJASLd")
-    print(file.name)
     wait_for_nougat_to_start(timeout=30)
     pdf_text=nougat_pdf_to_markdown(file)
     print("[PDF TEXT]")
@@ -154,7 +135,7 @@ async def upload_file(request):
             # text = read_file(uploaded_file)
             # # Pass the text to the LLM
             # response = parse_text(text)
-            return render(request, 'index.html', {'message': 'File processed successfully.', 'text': all_parsed, 'response': all_parsed})
+            return render(request, 'index.html', {'message': 'File processed successfully.', 'parsed_text': all_parsed})
         else:
             return render(request, 'index.html', {'error': 'No file uploaded.'})
     return render(request, 'index.html')
