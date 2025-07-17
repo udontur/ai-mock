@@ -1,7 +1,7 @@
 ## venv
 Initiate the virtual environment
 ```
-./script/venv.sh
+./assets/scripts/venv.sh
 ```
 Start the virtual environment
 ```

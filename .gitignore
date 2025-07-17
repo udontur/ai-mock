@@ -5,3 +5,5 @@ venv/
 .env/
 .venv/ 
 __pycache__
+
+.nix/fix-python
