@@ -2,10 +2,14 @@
 Developers: [@RailgunGLM](https://github.com/RailgunGLM), [@Animal-Migration](https://github.com/Animal-Migration), [@udontur](https://github.com/udontur)
 
 ## Development
+> [!NOTE]
+> Python version **must be**: `Python 3.12`
 ### Initial Cloning
-After cloning the repo, you need to create your own `.env` file that contains the Django secret key and OpenRouter API key. Contact turtle for the secret key. Sign up in OpenRouter for the OpenRouter API Key.
+After cloning the repo, you need to create your own `.env` file that contains:
+1. A Django secret key (Contact turtle for the secret key)
+2. OpenRouter API credentials (Get yours at [OpenRouter](https://openrouter.ai)) 
 
-Python version **must be**: `Python 3.12`
+More information available in the [documentation](assets/docs/environment.md)
 
 ### Getting Started
 Run the following script. It creates a virtual environment and installs required packages. 
@@ -26,4 +30,4 @@ python3 manage.py runserver
 Open `http://localhost:8000` in your browser.
 
 ### Documentation
-Detailed documentation is available on [assets/docs](assets/docs)
+Detailed documentation is available in [assets/docs](assets/docs)
