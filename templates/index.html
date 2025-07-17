@@ -8,8 +8,7 @@
             {% csrf_token %}
             <input type="file" id="input_file" name="input_file" accept=".pdf">
             <input type="submit" value="Submit">
-            <pre>{{ text }}</pre>
-            <pre>{{ response }}</pre>
+            <pre>{{ parsed_text }}</pre>
         </form>
     </div>
 </body>
