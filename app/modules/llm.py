@@ -4,7 +4,7 @@ from os import getenv
 
 def get_response(user_prompt, text):
     prompt = """
-        {{user_prompt}}
+        {user_prompt}
 
         {text}
     """
@@ -15,5 +15,5 @@ def get_response(user_prompt, text):
         model_name=getenv("OPENROUTER_MODEL_NAME"),
     )
     llm_chain = prompt | llm
-    response = llm_chain.invoke(input={"text": text})
+    response = llm_chain.invoke(input={"user_prompt": user_prompt, "text": text})
     return response

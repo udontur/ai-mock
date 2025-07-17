@@ -1,9 +1,11 @@
 from django.shortcuts import render
 
 from app.modules import parser
+from app.modules import prompt
 
 
 def index(request):
+    prompt.init_prompt()
     return render(request, "index.html")
 
 
