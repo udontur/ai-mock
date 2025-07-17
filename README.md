@@ -3,22 +3,21 @@ Developers: [@RailgunGLM](https://github.com/RailgunGLM), [@Animal-Migration](ht
 
 ## Development
 ### Initial Cloning
-After cloning the repo, you need to create your own `.env` file that contains the Django secret key. Contact turtle for the secret key. 
+After cloning the repo, you need to create your own `.env` file that contains the Django secret key and OpenRouter API key. Contact turtle for the secret key. Sign up in OpenRouter for the OpenRouter API Key.
 
-Python version *must be*: `Python 3.12`
+Python version **must be**: `Python 3.12`
 
-### Install packages
-Create and start a virtual environment
+### Getting Started
+Run the following script. It creates a virtual environment and installs required packages. 
 ```
 ./assets/scripts/venv.sh
-source .venv/bin/activate
-```
-Install the required packages
-```sh
-pip install -r requirements.txt
 ```
 
 ### Running it Locally
+Open the Python virtual environment
+```sh
+source .venv/bin/activate
+```
 Start the development server
 ```bash
 python3 manage.py runserver
