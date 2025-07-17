@@ -6,4 +6,4 @@ venv/
 .venv/ 
 __pycache__
 
-.nix/fix-python
+# .nix/fix-python

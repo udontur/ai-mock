@@ -2,7 +2,6 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from os import getenv
 
-
 def get_response(user_prompt, text):
     prompt = """
         {{user_prompt}}
