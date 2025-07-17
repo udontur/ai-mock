@@ -1,4 +1,4 @@
-# AI project
+# Mock Paper Generator
 Developers: [@RailgunGLM](https://github.com/RailgunGLM), [@Animal-Migration](https://github.com/Animal-Migration), [@udontur](https://github.com/udontur)
 
 ## Development
