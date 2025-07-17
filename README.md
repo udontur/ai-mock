@@ -7,7 +7,7 @@ Developers: [@RailgunGLM](https://github.com/RailgunGLM), [@Animal-Migration](ht
 ### Initial Cloning
 After cloning the repo, you need to create your own `.env` file that contains:
 1. A Django secret key (Contact turtle for the secret key)
-2. OpenRouter API credentials (Get yours at [OpenRouter](https://openrouter.ai)) 
+2. LLM API credentials (Contact turtle to create your API key) 
 
 More information available in the [documentation](assets/docs/environment.md)
 
