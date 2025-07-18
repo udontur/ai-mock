@@ -6,7 +6,13 @@
         <form enctype="multipart/form-data" action="/upload_file" method="post">
             <label for="input_file">Upload a file:</label>
             {% csrf_token %}
-            <input type="file" id="input_file" name="input_file" accept=".pdf">
+            <input type="file" id="input_file" name="input_file" accept=".pdf"> <br>
+            <input type="radio" id="text" name="pdf_type" value="Text">
+            <label for="text">Text-based PDF</label> <br>
+            <input type="radio" id="image" name="pdf_type" value="Image">
+            <label for="image">Image-based PDF</label> <br>
+            <input type="radio" id="latex" name="pdf_type" value="LaTeX">
+            <label for="latex">LaTeX-based PDF</label> <br>
             <input type="submit" value="Submit">
             <pre>{{ parsed_text }}</pre>
         </form>
